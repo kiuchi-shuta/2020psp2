@@ -17,7 +17,7 @@ int main(void)
     double s_A=5.43;
     double mu_B=169.7;
     double s_B=5.5;
-    double z1,z2,y1,y2=0;
+    double z1=0,z2=0,y1=0,y2=0;
     
 
     printf("input the filename of sample:");
@@ -34,12 +34,12 @@ int main(void)
     while(fgets(buf,sizeof(buf),fp) != NULL){
         sscanf(buf,"%lf",&val);
         double x=val;
-z1=(x-mu_A)/s_A;
-y1=p_stdnorm(z1);
-z2=(x-mu_B)/s_B;
-y2=p_stdnorm(z2);
-L1=L1*y1;
-L2=L2*y2;
+        z1=(x-mu_A)/s_A;
+        y1=p_stdnorm(z1);
+        z2=(x-mu_B)/s_B;
+        y2=p_stdnorm(z2);
+        L1=L1*y1;
+        L2=L2*y2;
 
 
     }
