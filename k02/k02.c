@@ -31,7 +31,8 @@ int main(void)
         exit(EXIT_FAILURE);
     }
 
-    while(fgets(buf,sizeof(buf),fp) != NULL){
+    while(fgets(buf,sizeof(buf),fp) != NULL)
+    {
         sscanf(buf,"%lf",&val);
         double x=val;
         z1=(x-mu_A)/s_A;
