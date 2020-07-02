@@ -13,10 +13,10 @@ int main(void)
     char buf[256];
     FILE* fp;
     double L1=1,L2=1;
-    double mu_A=170.8;
-    double s_A=5.43;
-    double mu_B=169.7;
-    double s_B=5.5;
+    const double mu_A=170.8;
+    const double s_A=5.43;
+    const double mu_B=169.7;
+    const double s_B=5.5;
     double z1=0,z2=0,y1=0,y2=0;
     
 
