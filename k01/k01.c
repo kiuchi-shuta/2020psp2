@@ -3,14 +3,8 @@
 #include <string.h>
 #include <math.h>
 
-extern double ave_online(double val,double ave,int N)
- {
-           return(((N-1)*ave/N)+(val/N));
-            }
-extern double var_online(double val,double ave,double square_ave,int N)
-{
-          return(((N-1)*square_ave/N)+pow(val,2)/N)-pow((((N-1)*ave/N)+val/N),2);
-        } 
+extern double ave_online(double val,double ave,int N);
+extern double var_online(double val,double ave,double square_ave,int N);
 
 int main(void)
 {
@@ -33,24 +27,24 @@ int main(void)
         exit(EXIT_FAILURE);
     }
 
-    while(fgets(buf,sizeof(buf),fp) != NULL){
+    while(fgets(buf,sizeof(buf),fp) != NULL)
+    {
         sscanf(buf,"%lf",&val);
-
-    N++;
-var= var_online(val,ave,square_ave,N);
-ave=ave_online(val,ave,N);
-square_ave= ave_online(pow(val,2),square_ave,N);
-
-
+         N++;
+         var= var_online(val,ave,square_ave,N);
+         ave=ave_online(val,ave,N);
+         square_ave= ave_online(pow(val,2),square_ave,N);
     }
-    unvar=N*var/(N-1);
+    
     if(fclose(fp) == EOF){
         fputs("file close error\n",stderr);
         exit(EXIT_FAILURE);
     }
-  printf("ave=%lf\n",ave);
-    printf("var=%lf\n",var);
-    printf("unvar=%lf\n",unvar);
+     unvar=N*var/(N-1);
+     printf("ave=%lf\n",ave);
+     printf("var=%lf\n",var);
+     printf("est ave=%lf\n",ave);
+     printf("unvar=%lf\n",unvar);
     
 
     return 0;
@@ -58,3 +52,11 @@ square_ave= ave_online(pow(val,2),square_ave,N);
 
 }
 
+ double ave_online(double val,double ave,int N)
+        {
+           return(((N-1)*ave/N)+(val/N));
+        }
+double var_online(double val,double ave,double square_ave,int N)
+        { 
+          return(((N-1)*square_ave/N)+pow(val,2)/N)-pow((((N-1)*ave/N)+val/N),2);
+        } 
