@@ -103,3 +103,6 @@ population variance (estimated)：28.984813
 
 [comment #20200705_2]
 - OKです. 
+
+[comment #20200707 sonoda]
+- 課題1の完了を確認しました（薗田）
