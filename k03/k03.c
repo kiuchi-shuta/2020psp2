@@ -19,7 +19,10 @@ int main(int argc, char* argv[])
     double sigma=0;
     int i;
     double dummy=0;
-
+if(argc != 4){
+    printf("引数が正しくない");    
+    exit(EXIT_FAILURE);
+    }
    
     sscanf(argv[1],"%lf",&mu);
     sscanf(argv[2],"%lf",&sigma);

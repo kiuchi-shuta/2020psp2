@@ -66,7 +66,7 @@ int main(int argc, char* argv[])
 
 
 ## ソースコードの説明
-
+22.因数が異なるときにエラーメッセージを出して終了
 24.argc=1でmuの値をsscanfで読み取る。
 25.argc=2でsigmaの値をsscanfで読み取る。
 26.argc=3でnum_dummyの値をsscanfで読み取る。
