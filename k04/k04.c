@@ -30,7 +30,7 @@ int main(void)
         exit(EXIT_FAILURE);
     }
 
-      while(fgets(buf,sizeof(buf),fp) != NULL){
+    while(fgets(buf,sizeof(buf),fp) != NULL){
         if(i == -1){
             i++;
             continue;
